@@ -1,34 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>12" Radio Controlled Dalek Sec</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Sign Up</a></li>
-                <li><a href="#">Cart</a></li>
-            </ul>
-        </nav>
-    </header>
     <main>
         <h1>12" Radio Controlled Dalek Sec</h1>
-        <figure class="model-background">
-            <model-viewer
-                src="/models/nsd_dalek_sec/scene.gltf"
-                alt="Dalek Sec">
-            </model-viewer>
-            <figcaption>Dalek Sec Model</figcaption>
-        </figure>
-        <
+        <h2>Dalek Sec, the leader of the Cult of Skaro</h2>
+        <section class="purchase-container">
+            <figure class="model-background">
+                <model-viewer 
+                    class="dalek-model"
+                    src="/models/dalek-sec.glb" 
+                    alt="Dalek Sec" 
+                    auto-rotate 
+                    auto-rotate-delay="0" 
+                    rotation-per-second="20deg" 
+                    interaction-prompt="none" 
+                    disable-zoom style="pointer-events:none;"
+                    tabindex="-1"
+                ></model-viewer>
+                <figcaption>Dalek Sec RC Toy</figcaption>
+            </figure>
+            <aside class="purchase-options">
+                <form>
+                    <fieldset>
+                        <legend>Buy it now!</legend>
+                        <label for="quantity-box">Quantity</label>
+                        <section class="radio-box" id="quantity-box">
+                            <div class="radio-option">
+                                <input type="radio" name="quantity" id="1" value="1" tabindex="0">
+                                <label class="radio-card" for="1">1</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="quantity" id="2" value="2" tabindex="0">
+                                <label class="radio-card" for="2">2</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="quantity" id="3" value="3" tabindex="0">
+                                <label class="radio-card" for="3">3</label>
+                            </div>
+                        </section>
+                        <section class="radio-box" id="quantity-box">
+                            <div class="radio-option">
+                                <input type="radio" name="delivery" id="delivery" value="delivery">
+                                <label class="radio-card" for="delivery">Delivery</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="delivery" id="collect" value="collect">
+                                <label class="radio-card" for="collect">Collection</label>
+                            </div>
+                            </div>
+                        </section>
+                    </fieldset>
+                </form>
+            </aside>
+        </section>
     </main>
     <footer>
 
     </footer>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </body>
 </html>
