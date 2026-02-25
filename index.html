@@ -13,7 +13,7 @@
         <h1>12" Radio Controlled Dalek Sec</h1>
         <h2>Dalek Sec, the leader of the Cult of Skaro</h2>
         <section class="purchase-container">
-            <figure class="model-background">
+            <figure class="dalek-background">
                 <model-viewer 
                     class="dalek-model"
                     src="/models/dalek-sec.glb" 
@@ -31,35 +31,86 @@
                 <form>
                     <fieldset>
                         <legend>Buy it now!</legend>
-                        <label for="quantity-box">Quantity</label>
-                        <section class="radio-box" id="quantity-box">
-                            <div class="radio-option">
-                                <input type="radio" name="quantity" id="1" value="1" tabindex="0">
-                                <label class="radio-card" for="1">1</label>
+                        <fieldset class="radio-box" id="quantity-box">
+                            <legend>Quantity (Max 3 per customer)</legend>
+                            <div class="radio-card" data-label="1">
+                                <label for="1">1</label>
+                                <input type="radio" name="quantity" id="1" value="1">
                             </div>
-                            <div class="radio-option">
-                                <input type="radio" name="quantity" id="2" value="2" tabindex="0">
-                                <label class="radio-card" for="2">2</label>
+                            <div class="radio-card" data-label="2">
+                                <label for="2">2</label>
+                                <input type="radio" name="quantity" id="2" value="2">
                             </div>
-                            <div class="radio-option">
-                                <input type="radio" name="quantity" id="3" value="3" tabindex="0">
-                                <label class="radio-card" for="3">3</label>
+                            <div class="radio-card" data-label="3">
+                                <label for="3">3</label>
+                                <input type="radio" name="quantity" id="3" value="3">
                             </div>
-                        </section>
-                        <section class="radio-box" id="quantity-box">
-                            <div class="radio-option">
+                        </fieldset>
+                        <fieldset class="radio-box" id="delivery-box">
+                            <legend>Delivery Options</legend>
+                            <div class="radio-card" data-label="Delivery">
+                                <label for="delivery">Delivery</label>
                                 <input type="radio" name="delivery" id="delivery" value="delivery">
-                                <label class="radio-card" for="delivery">Delivery</label>
                             </div>
-                            <div class="radio-option">
-                                <input type="radio" name="delivery" id="collect" value="collect">
-                                <label class="radio-card" for="collect">Collection</label>
+                            <div class="radio-card" data-label="Collection">
+                                <label for="collection">Collection</label>
+                                <input type="radio" name="delivery" id="collection" value="collection">
                             </div>
                             </div>
-                        </section>
+                        </fieldset>
+                        <input type="submit">
                     </fieldset>
                 </form>
             </aside>
+        </section>
+        <section>
+            <h2>Toy Features</h2>
+            <ul>
+                <li>Full mobility using the remote control</li>
+                <li>8 Different Voice Lines</li>
+                <li>Posable limbs</li>
+            </ul>
+            <div class="controller-box">
+                <fieldset class="sound-box">
+                    <legend>Sound Effects</legend>
+                    <audio id="audio" src="https://files.catbox.moe/u87bt3.mp3"></audio>
+                    <button onclick="audio.play()">Meow</button>
+                    <audio id="audio2" src="https://files.catbox.moe/u87bt3.mp3"></audio>
+                    <button onclick="audio2.play()">Meow</button>
+                    <audio id="audio3" src="https://files.catbox.moe/u87bt3.mp3"></audio>
+                    <button onclick="audio3.play()">Meow</button>
+                    <audio id="audio4" src="https://files.catbox.moe/u87bt3.mp3"></audio>
+                    <button onclick="audio4.play()">Meow</button>
+                    <audio id="audio5" src="https://files.catbox.moe/u87bt3.mp3"></audio>
+                    <button onclick="audio5.play()">Meow</button>
+                    <audio id="audio6" src="https://files.catbox.moe/u87bt3.mp3"></audio>
+                    <button onclick="audio6.play()">Meow</button>
+                    <audio id="audio7" src="https://files.catbox.moe/u87bt3.mp3"></audio>
+                    <button onclick="audio7.play()">Meow</button>
+                    <audio id="audio8" src="https://files.catbox.moe/u87bt3.mp3"></audio>
+                    <button onclick="audio8.play()">Meow</button>
+                </fieldset>
+                <div>
+                    <figure class="controller-background">
+                        <model-viewer 
+                            class="remote-control-model"
+                            src="/models/remote-control.glb" 
+                            alt="Dalek Sec" 
+                            auto-rotate 
+                            auto-rotate-delay="0" 
+                            rotation-per-second="20deg" 
+                            interaction-prompt="none" 
+                            disable-zoom style="pointer-events:none;"
+                            tabindex="-1"
+                        ></model-viewer>
+                        <figcaption>Dalek Remote Control</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>About Dalek Sec!</h2>
+            <p>Delek Sec is an extremely high ranking dalek</p>
         </section>
     </main>
     <footer>
