@@ -7,16 +7,27 @@
 
 body {
     font-family: "Dalek", sans-serif;
-    background-color: silver;
+    background-color: black;
+    color: white;
+    margin: 0;
+    text-shadow: 0.1em 0.1em 0.05em gray;
+}
+
+h1 {
+    font-size: clamp(1.5em, 4vw, 4em);
 }
 
 header {
     justify-items: center;
     width: 100%;
+    margin: 4em auto;
 }
 
 
-main {justify-items: center;}
+main {
+    justify-items: center;
+}
+
 
 
 article{
@@ -24,24 +35,27 @@ article{
     width: 100%;
 }
 
-.dalek-background {
+.dalek-model {
     width: clamp(20em, 40%, 40em);
     height: clamp(20em, 50vw, 45em);
-    border: black solid;
-    border-radius: 4em 4em 0em 0em;
-    background: linear-gradient(180deg,rgba(176, 180, 58, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
-    justify-items: center;
-    margin: 2em;
+    animation: hover 3s ease-in-out infinite;
 }
 
-.dalek-model {
-    width: 90%;
-    height: 90%;
+@keyframes hover {
+    0%   { transform: translateY(1.5); }
+    50%  { transform: translateY(-1.5em); }
+    100% { transform: translateY(1.5); }
+}
+
+@keyframes blink {
+    0%   { transform: scale(0.95); }
+    50%  { transform: scale(1.05); }
+    100% { transform: scale(0.95); }
 }
 
 .remote-control-model {
-    width: 20em;
-    height: 90%;
+    width: 30em;
+    height: 40em;
 }
 
 section {
@@ -51,33 +65,70 @@ section {
 
 ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
     padding: 0;
 }
 
 li {
-    width: 20%;
     list-style-type: none;
-    border: solid black;
+    border: solid white 2px;
     border-radius: 0.5em;
     padding: 1em;
+    margin: 0.5em;
+    font-size: 1.2em;
 }
 
 .purchase-container {
+    margin: 0;
+    padding: 2em 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-image: url(images/dalek-ship.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.purchase-options {
+form {
+    min-width: 20em;
     width: 40%;
-    margin: 2em;
+    margin: auto 2em;
+    padding: 1em;
+    border: solid white;
+    background-color: black;
 }
+
+input[type="submit"], button {
+    font-family: inherit;
+    padding: 1em 1.75em;
+    margin: 1em auto;
+    background-color: blue;
+    color: white;
+    border: white solid 2px;
+    border-radius: 0.5em;
+    font-size: 1em;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #000099;
+    cursor: pointer;
+}
+
+
 
 fieldset{
-    border-color: black;
+    border-color: white;
     border-radius: 0.25em;
+    display: flex;
+    flex-direction: column;
+}
+
+legend {
+    animation: blink 1.5s ease-in-out infinite;
 }
 
 .radio-box:focus-within{
@@ -105,7 +156,7 @@ label {
 }
 
 .radio-card:hover {
-  border: 2px solid black;
+  border: 2px solid blue;
 
 }
 
@@ -146,17 +197,41 @@ label {
 }
 
 .controller-box {
+    position: relative;
     display: flex;
     flex-wrap: wrap-reverse;
     justify-content: space-evenly;
     width: 100%;
 }
 
+#node-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: visible;
+}
+
+#node-lines line {
+    stroke: white;
+    stroke-width: 1.5;
+    opacity: 0.6;
+}
+
+#node-lines circle {
+  fill: white;
+  filter: drop-shadow(0 0 4px white);
+}
+
+
 .sound-box {
-    width: 20%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    border: none;
 }
 
 .paragraph-box {
@@ -167,17 +242,23 @@ label {
 }
 
 .grid-h2 {
-    grid-column: 3/5;
+    grid-column: 2/6;
     grid-row: 1;
+    margin: auto;
+    font-size: clamp(2em, 5vw, 5em);
 }
 
 .grid-img1, .grid-img2 {
-    width: 100%;
-    height: 100%;
+    width: clamp(10em, 26vw, 23em);
+    height: clamp(10em, 20vw, 20em);
 }
 
 p {
     font-size: clamp(1px, 5vw, 20px);
+}
+
+.grid-para1, .grid-para2 {
+    font-size: clamp(0.75em, 2vw + 5px, 6em);
 }
 
 .grid-img1 {
@@ -202,6 +283,16 @@ p {
     grid-row: 3;
 }
 
+span {
+    color: red;
+}
+
 footer {
-    justify-items: center;
+    width: 100%;
+    margin: 2em 0;
+    text-align: center;
+}
+
+footer > a {
+    color: lightgreen;
 }

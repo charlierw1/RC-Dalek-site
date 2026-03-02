@@ -3,22 +3,19 @@
 <head>
     <link rel="preconnect" href="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
     <meta charset="UTF-8">
+    <meta name="description" content="Store page for the 12 inch radio controlled Dalek Sec Toy">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>12" Radio Controlled Dalek Sec</title>
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>12" Radio Controlled Dalek Sec</h1>
-    </header>
     <main>
-        <h2>Dalek Sec, the leader of the Cult of Skaro</h2>
+        <h1>Dalek Sec, the leader of the Cult of Skaro</h1>
         <section class="purchase-container">
-            <figure class="dalek-background">
                 <model-viewer 
                     class="dalek-model"
-                    src="/models/dalek-sec.glb" 
+                    src="models/dalek-sec.glb" 
                     alt="Dalek Sec" 
                     auto-rotate 
                     auto-rotate-delay="0" 
@@ -27,43 +24,39 @@
                     disable-zoom style="pointer-events:none;"
                     tabindex="-1"
                 ></model-viewer>
-                <figcaption>Dalek Sec RC Toy</figcaption>
-            </figure>
-            <aside class="purchase-options">
-                <form>
-                    <fieldset>
-                        <legend>Buy it now!</legend>
-                        <fieldset class="radio-box" id="quantity-box">
-                            <legend>Quantity (Max 3 per customer)</legend>
-                            <div class="radio-card" data-label="1">
-                                <label for="1">1</label>
-                                <input type="radio" name="quantity" id="1" value="1">
-                            </div>
-                            <div class="radio-card" data-label="2">
-                                <label for="2">2</label>
-                                <input type="radio" name="quantity" id="2" value="2">
-                            </div>
-                            <div class="radio-card" data-label="3">
-                                <label for="3">3</label>
-                                <input type="radio" name="quantity" id="3" value="3">
-                            </div>
-                        </fieldset>
-                        <fieldset class="radio-box" id="delivery-box">
-                            <legend>Delivery Options</legend>
-                            <div class="radio-card" data-label="Delivery">
-                                <label for="delivery">Delivery</label>
-                                <input type="radio" name="delivery" id="delivery" value="delivery">
-                            </div>
-                            <div class="radio-card" data-label="Collection">
-                                <label for="collection">Collection</label>
-                                <input type="radio" name="delivery" id="collection" value="collection">
-                            </div>
-                            </div>
-                        </fieldset>
-                        <input type="submit">
+            <form>
+                <fieldset>
+                    <legend>Buy it now!</legend>
+                    <fieldset class="radio-box" id="quantity-box">
+                        <legend>Quantity (Max 3 per customer)</legend>
+                        <div class="radio-card" data-label="1">
+                            <label for="1">1</label>
+                            <input type="radio" name="quantity" id="1" value="1">
+                        </div>
+                        <div class="radio-card" data-label="2">
+                            <label for="2">2</label>
+                            <input type="radio" name="quantity" id="2" value="2">
+                        </div>
+                        <div class="radio-card" data-label="3">
+                            <label for="3">3</label>
+                            <input type="radio" name="quantity" id="3" value="3">
+                        </div>
                     </fieldset>
+                    <fieldset class="radio-box" id="delivery-box">
+                        <legend>Delivery Options</legend>
+                        <div class="radio-card" data-label="Delivery">
+                            <label for="delivery">Delivery</label>
+                            <input type="radio" name="delivery" id="delivery" value="delivery">
+                        </div>
+                        <div class="radio-card" data-label="Collection">
+                            <label for="collection">Collection</label>
+                            <input type="radio" name="delivery" id="collection" value="collection">
+                        </div>
+                        </div>
+                </fieldset>
+                    <input type="submit">
+                </fieldset>
                 </form>
-            </aside>
         </section>
         <section>
             <h2>Toy Features</h2>
@@ -74,65 +67,102 @@
             </ul>
             <h3>Try the sounds!</h3>
             <div class="controller-box">
+                <svg id="node-lines" aria-hidden="true"></svg>
                 <fieldset class="sound-box">
                     <legend>Sound Effects</legend>
                     <audio id="audio" src="https://files.catbox.moe/u87bt3.mp3"></audio>
-                    <button onclick="audio.play()">Meow</button>
-                    <audio id="audio2" src="https://files.catbox.moe/u87bt3.mp3"></audio>
-                    <button onclick="audio2.play()">Meow</button>
-                    <audio id="audio3" src="https://files.catbox.moe/u87bt3.mp3"></audio>
-                    <button onclick="audio3.play()">Meow</button>
-                    <audio id="audio4" src="https://files.catbox.moe/u87bt3.mp3"></audio>
-                    <button onclick="audio4.play()">Meow</button>
-                    <audio id="audio5" src="https://files.catbox.moe/u87bt3.mp3"></audio>
-                    <button onclick="audio5.play()">Meow</button>
-                    <audio id="audio6" src="https://files.catbox.moe/u87bt3.mp3"></audio>
-                    <button onclick="audio6.play()">Meow</button>
-                    <audio id="audio7" src="https://files.catbox.moe/u87bt3.mp3"></audio>
-                    <button onclick="audio7.play()">Meow</button>
-                    <audio id="audio8" src="https://files.catbox.moe/u87bt3.mp3"></audio>
-                    <button onclick="audio8.play()">Meow</button>
+                    <button onclick="audio.play()">Multiple spectrum scanning now engaged!</button>
+                    <button onclick="audio.play()">Halt or you will be exterminated!</button>
+                    <button onclick="audio.play()">We are the supreme beings!</button>
+                    <button onclick="audio.play()">Seek, locate, annihilate!</button>
+                    <button onclick="audio.play()">Obey the Daleks! No other warning will be given!</button>
+                    <button onclick="audio.play()">You are an enemy of the Daleks.</button>
+                    <button onclick="audio.play()">Exterminate! (Gun SFX)</button>
                 </fieldset>
-                <div>
-                    <figure class="controller-background">
-                        <model-viewer 
-                            class="remote-control-model"
-                            src="/models/remote-control.glb" 
-                            alt="Dalek Sec" 
-                            auto-rotate 
-                            auto-rotate-delay="0" 
-                            rotation-per-second="20deg" 
-                            interaction-prompt="none" 
-                            disable-zoom style="pointer-events:none;"
-                            tabindex="-1"
-                        ></model-viewer>
-                        <figcaption>Dalek Remote Control</figcaption>
-                    </figure>
-                </div>
+                <model-viewer 
+                        class="remote-control-model"
+                        src="models/remote-control.glb" 
+                        alt="Dalek Sec" 
+                        auto-rotate 
+                        auto-rotate-delay="0" 
+                        rotation-per-second="20deg" 
+                        interaction-prompt="none" 
+                        disable-zoom style="pointer-events:none;"
+                    tabindex="-1"
+                ></model-viewer>
             </div>
         </section>
         <section class="paragraph-box">
             <h2 class="grid-h2">About Dalek Sec!</h2>
-            <img class="grid-img1" src="/images/dalek-sec.webp" alt="Dalek Sec" height="200" width="200">
+            <img class="grid-img1" src="images/magella.png" alt="Dalek Sec" height="200" width="200">
             <p class="grid-para1">
-                Dalek Sec is an extremely high ranking dalek said to be above the dalek emperor himself!Dalek Sec is an extremely high 
-                ranking dalek said to be above the dalek emperor himself!Dalek Sec is an extremely high ranking dalek said to be above 
-                the dalek emperor himself! Dalek Sec is an extremely high ranking dalek said to be above the dalek emperor himself!
-                Dalek Sec is an extremely high ranking dalek said to be above the dalek emperor himself! Dalek Sec is an extremely 
-                high ranking dalek said to be above the dalek emperor himself!
+                <span>Dalek Sec</span> is an extremely high ranking dalek said to be above the <span>Dalek Emperor</span> himself! Sec began
+                as a regular bronze Dalek. After proving himself by <span>exterminating</span> the <span>Mechanoids</span> during their 
+                war on Magella, Sec was appointed as the leader of the <span>Cult of Skaro</span>. He was then upgraded to so 
+                that his casing was made of <span>Metalert</span>, an extremely strong alloy of <span>Dalekanium</span>.
             </p>
-            <img class="grid-img2" src="/images/dalek-sec.webp" alt="Dalek Sec" height="200" width="200">
+            <img class="grid-img2" src="images/battle.png" alt="Dalek Sec" height="200" width="200">
             <p class="grid-para2">
-                Dalek Sec is an extremely high ranking dalek said to be above the dalek emperor himself!Dalek Sec is an extremely high 
-                ranking dalek said to be above the dalek emperor himself!Dalek Sec is an extremely high ranking dalek said to be above 
-                the dalek emperor himself! Dalek Sec is an extremely high ranking dalek said to be above the dalek emperor himself!
-                Dalek Sec is an extremely high ranking dalek said to be above the dalek emperor himself! Dalek Sec is an extremely 
-                high ranking dalek said to be above the dalek emperor himself!
+                During the later stages last great <span>Time War</span>, both sides could see the havoc the destruction
+                the the war was bringing to the universe. The <span>Cult of Skaro</span> stole the <span>Genesis Ark</span> and escaped
+                the universe in a <span>Void Ship</span> to ensure the survival of the daleks. After the war, they were
+                returned to the universe to find that the <span>Cybermen</span> had used the crack between worlds to
+                <span>invade</span> london in our universe. They then used the <span>Genesis Ark</span> to unleash millions
+                of Daleks to destroy the <span>Cybermen</span>
             </p>
         </section>
     </main>
     <footer>
-        <p>Made by <a href="https://github.com/charlierw1">Charlie Wightman</a> </p>
+        <a href="https://github.com/charlierw1" target="_blank">Charlie Wightman</a>
     </footer>
 </body>
+<script>
+   function drawNodeLines() {
+  const svg = document.getElementById('node-lines');
+  const box = document.querySelector('.controller-box');
+  const modelViewer = document.querySelector('.remote-control-model');
+  const buttons = document.querySelectorAll('.sound-box button');
+
+  svg.innerHTML = '';
+
+  const boxRect = box.getBoundingClientRect();
+  const mvRect  = modelViewer.getBoundingClientRect();
+
+  const targetX = (mvRect.left - boxRect.left) + mvRect.width  / 2;
+  const targetY = (mvRect.top  - boxRect.top)  + mvRect.height / 2;
+
+  const isMobile = window.innerWidth <= 606;
+
+  const centralDot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+  centralDot.setAttribute('cx', targetX);
+  centralDot.setAttribute('cy', targetY);
+  centralDot.setAttribute('r', 6);
+  svg.appendChild(centralDot);
+
+  buttons.forEach(button => {
+    const btnRect = button.getBoundingClientRect();
+    const btnX = isMobile
+      ? (btnRect.left - boxRect.left) + btnRect.width  / 2
+      : (btnRect.right - boxRect.left);
+    const btnY = (btnRect.top - boxRect.top) + btnRect.height / 2;
+
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('x1', btnX);
+    line.setAttribute('y1', btnY);
+    line.setAttribute('x2', targetX);
+    line.setAttribute('y2', targetY);
+    svg.appendChild(line);
+
+    const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    dot.setAttribute('cx', btnX);
+    dot.setAttribute('cy', btnY);
+    dot.setAttribute('r', 4);
+    svg.appendChild(dot);
+  });
+}
+
+window.addEventListener('load', drawNodeLines);
+window.addEventListener('resize', drawNodeLines);
+setTimeout(drawNodeLines, 1000);
+</script>
 </html>
