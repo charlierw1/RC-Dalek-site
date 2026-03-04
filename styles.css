@@ -14,7 +14,11 @@ body {
 }
 
 h1 {
-    font-size: clamp(1.5em, 4vw, 4em);
+    font-size: clamp(1.2em, 4vw, 4em);
+}
+
+h2 {
+    font-size: clamp(0.5em, 5vw, 3em);
 }
 
 header {
@@ -78,7 +82,8 @@ li {
     padding: 1em;
     margin: 0.5em;
     font-size: 1.2em;
-    background-color: red;
+    background-color: gray;
+    color: black;
 }
 
 .purchase-container {
@@ -139,6 +144,7 @@ legend {
 
 label {
     margin: auto;
+    color: black;
 }
 
 .radio-box {
@@ -152,7 +158,7 @@ label {
 .radio-card {
   position: relative;
   border: 2px solid white;
-  background-color: red;
+  background-color: gray;
   border-radius: 8px;
   padding: 1em;
 }
@@ -189,14 +195,6 @@ label {
   border-color: blue;
 }
 
-.controller-background {
-    width: clamp(20em, 40vw, 50em);
-    height: clamp(20em, 50vw, 45em);
-    border: black solid;
-    border-radius: 4em 4em 0em 0em;
-    background: linear-gradient(180deg,rgba(176, 180, 58, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
-    justify-items: center;
-}
 
 .controller-box {
     position: relative;
@@ -227,62 +225,53 @@ label {
   filter: drop-shadow(0 0 4px white);
 }
 
+::-webkit-scrollbar {
 
-.sound-box {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    border: none;
+  display: none;
+
+}
+
+.scroll-section {
+    width: 100%;
+    height: 300vh;
 }
 
 .paragraph-box {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 1fr 2fr 2fr;
-    gap: 1em;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100%;
+    height: 80vh;
+    gap: 2em;
+    padding: 5em;
+    box-sizing: border-box;
+    align-items: center;
 }
 
-.grid-h2 {
-    grid-column: 2/6;
-    grid-row: 1;
-    margin: auto;
-    font-size: clamp(2em, 5vw, 5em);
+.panel {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
-.grid-img1, .grid-img2 {
-    width: clamp(10em, 26vw, 23em);
-    height: clamp(10em, 20vw, 20em);
+.panel > img{
+    width: clamp(10em, 30vw, 30em);
+    height: auto;
+    object-fit: contain;
+    transform: rotate(1deg);
 }
 
-p {
-    font-size: clamp(1px, 5vw, 20px);
-}
-
-.grid-para1, .grid-para2 {
-    font-size: clamp(0.75em, 2vw + 5px, 6em);
-}
-
-.grid-img1 {
-    transform: rotate(-2deg);
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.grid-para1 {
-    grid-column: 3/6;
-    grid-row: 2;
-}
-
-.grid-img2 {
-    transform: rotate(2deg);
-    grid-column: 5;
-    grid-row: 3;
-}
-
-.grid-para2 {
-    grid-column: 2/5;
-    grid-row: 3;
+.panel > p {
+    transform: rotate(-1deg);
+    width: 60vw;
+    font-size: clamp(0.5em, 3vw, 2.3em);
+    white-space: normal;
 }
 
 span {

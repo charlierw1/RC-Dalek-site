@@ -62,54 +62,87 @@
             <h2>Toy Features</h2>
             <ul>
                 <li>Full mobility using the remote control</li>
-                <li>8 Different Voice Lines</li>
+                <li>7 Different Voice Lines</li>
+                <li>Automatic Dome Movement</li>
+                <li>Flashing Lights</li>
                 <li>Posable limbs</li>
             </ul>
-            <h3>Try the sounds!</h3>
+            <h2>Try the sounds!</h2>
             <div class="controller-box">
                 <svg id="node-lines" aria-hidden="true"></svg>
                 <fieldset class="sound-box">
                     <legend>Sound Effects</legend>
-                    <audio id="audio" src="https://files.catbox.moe/u87bt3.mp3"></audio>
-                    <button onclick="audio.play()">Multiple spectrum scanning now engaged!</button>
-                    <button onclick="audio.play()">Halt or you will be exterminated!</button>
-                    <button onclick="audio.play()">We are the supreme beings!</button>
-                    <button onclick="audio.play()">Seek, locate, annihilate!</button>
-                    <button onclick="audio.play()">Obey the Daleks! No other warning will be given!</button>
-                    <button onclick="audio.play()">You are an enemy of the Daleks.</button>
-                    <button onclick="audio.play()">Exterminate! (Gun SFX)</button>
+                    <audio id="multiple" src="audio/multiple-spectrum.mp3"></audio>
+                    <button onclick="multiple.play()">Multiple spectrum scanning now engaged!</button>
+                    <audio id="halt" src="audio/halt.mp3"></audio>
+                    <button onclick="halt.play()">Halt or you will be exterminated!</button>
+                    <audio id="supreme" src="audio/supreme-beings.mp3"></audio>
+                    <button onclick="supreme.play()">We are the supreme beings!</button>
+                    <audio id="seek" src="audio/seek.mp3"></audio>
+                    <button onclick="seek.play()">Seek, locate, annihilate!</button>
+                    <audio id="obey" src="audio/obey.mp3"></audio>
+                    <button onclick="obey.play()">Obey the Daleks! No other warning will be given!</button>
+                    <audio id="enemy" src="audio/enemy.mp3"></audio>
+                    <button onclick="enemy.play()">You are an enemy of the Daleks.</button>
+                    <audio id="exterminate" src="audio/exterminate.mp3"></audio>
+                    <button onclick="exterminate.play()">Exterminate! (Gun SFX)</button>
                 </fieldset>
                 <model-viewer 
-                        class="remote-control-model"
-                        src="models/remote-control-compressed.glb" 
-                        alt="Dalek Sec" 
-                        auto-rotate 
-                        auto-rotate-delay="0" 
-                        rotation-per-second="20deg" 
-                        interaction-prompt="none" 
-                        disable-zoom style="pointer-events:none;"
+                    class="remote-control-model"
+                    src="models/remote-control-compressed.glb" 
+                    alt="Dalek Sec" 
+                    auto-rotate 
+                    auto-rotate-delay="0" 
+                    rotation-per-second="20deg" 
+                    interaction-prompt="none" 
+                    disable-zoom style="pointer-events:none;"
                     tabindex="-1"
                 ></model-viewer>
             </div>
         </section>
-        <section class="paragraph-box">
-            <h2 class="grid-h2">About Dalek Sec!</h2>
-            <img class="grid-img1" loading="lazy" src="images/magella.webp" alt="Dalek Sec" height="200" width="200">
-            <p class="grid-para1">
-                <span>Dalek Sec</span> is an extremely high ranking dalek said to be above the <span>Dalek Emperor</span> himself! Sec began
-                as a regular bronze Dalek. After proving himself by <span>exterminating</span> the <span>Mechanoids</span> during their 
-                war on Magella, Sec was appointed as the leader of the <span>Cult of Skaro</span>. He was then upgraded to so 
-                that his casing was made of <span>Metalert</span>, an extremely strong alloy of <span>Dalekanium</span>.
-            </p>
-            <img class="grid-img2" loading="lazy" src="images/battle.webp" alt="Dalek Sec" height="200" width="200">
-            <p class="grid-para2">
-                During the later stages last great <span>Time War</span>, both sides could see the havoc the destruction
-                the the war was bringing to the universe. The <span>Cult of Skaro</span> stole the <span>Genesis Ark</span> and escaped
-                the universe in a <span>Void Ship</span> to ensure the survival of the daleks. After the war, they were
-                returned to the universe to find that the <span>Cybermen</span> had used the crack between worlds to
-                <span>invade</span> london in our universe. They then used the <span>Genesis Ark</span> to unleash millions
-                of Daleks to destroy the <span>Cybermen</span>
-            </p>
+        <section class="scroll-section">
+            <h2>About Dalek Sec!</h2>
+            <article class="paragraph-box">
+                <div class="panel">
+                    <img loading="lazy" src="images/magella.png" alt="Dalek Sec" height="200" width="200">
+                </div>
+                <div class="panel">
+                    <p>
+                        <span>Dalek Sec</span> is an extremely high ranking dalek said to be above the <span>Dalek Emperor</span> himself! Sec began
+                        as a regular bronze Dalek. After proving himself by <span>exterminating</span> the <span>Mechanoids</span> during their 
+                        war on Magella, Sec was appointed as the leader of the <span>Cult of Skaro</span>. He was then upgraded to so 
+                        that his casing was made of <span>Metalert</span>, an extremely strong alloy of <span>Dalekanium</span>.
+                    </p>
+                </div>
+                <div class="panel">
+                    <img loading="lazy" src="images/battle.png" alt="Dalek Sec" height="200" width="200">
+                </div>
+                <div class="panel">
+                    <p>
+                        During the later stages last great <span>Time War</span>, both sides could see the havoc the destruction
+                        the the war was bringing to the universe. The <span>Cult of Skaro</span> stole the <span>Genesis Ark</span> and escaped
+                        the universe in a <span>Void Ship</span> to ensure the survival of the daleks. After the war, they were
+                        returned to the universe to find that the <span>Cybermen</span> had used the crack between worlds to
+                        <span>invade</span> london in our universe. They then used the <span>Genesis Ark</span> to unleash millions
+                        of Daleks to destroy the <span>Cybermen</span>
+                    </p>
+                </div>
+                <div class="panel">
+                    <img loading="lazy" src="images/hybrid.png" alt="Dalek Sec" height="200" width="200">
+                </div>
+                <div class="panel">
+                    <p>
+                        After the Battle of Canary Wharf, the <span>Cult of Skaro</span> escaped to New York City in 1930. Because they head
+                        used their ability to <span>Emergency Temporal Shift</span>, their power cells had become damaged and were limited on options.
+                        They then devised a plan to create a race of <span>Dalek-Human Hybrids</span> to ensure the survival of the Dalek Race.
+                        <span>Dalek Sec</span> also voulenteered to become the subject of the <span>Final experiment</span>, a plan to Features
+                        the body of a human and a dalek to allow the daleks to <span>leave their casing</span>. Towards the end of their plan,
+                        a spanner was thrown in the works as <span>The Doctor</span> showed up once again, mixing time lord D.N.A. into the hybrid 
+                        humans and causing them to <span>Rebel</span> against the daleks causing a fight that leaves only the last of the <span>Cult of Skaro</span>
+                        alive, who then emergency temporal shifts into the <span>Time War</span> to escape.
+                    </p>
+                </div>
+            </article>
         </section>
     </main>
     <footer>
@@ -160,6 +193,36 @@
     svg.appendChild(dot);
   });
 }
+
+const article = document.querySelector('.paragraph-box');
+const section = document.querySelector('.scroll-section');
+
+// Scroll wheel / trackpad
+window.addEventListener('wheel', (e) => {
+    const sectionRect = section.getBoundingClientRect();
+    const inView = sectionRect.top <= 0 && sectionRect.bottom > window.innerHeight;
+
+    if (!inView) return;
+
+    const atStart = article.scrollLeft <= 0;
+    const atEnd = article.scrollLeft + article.clientWidth >= article.scrollWidth - 1;
+
+    if (e.deltaY < 0 && atStart) return;
+    if (e.deltaY > 0 && atEnd) return;
+
+    e.preventDefault();
+    article.scrollLeft += e.deltaY;
+}, { passive: false });
+
+// Scrollbar drag sync
+article.addEventListener('scroll', () => {
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+    const maxArticleScroll = article.scrollWidth - article.clientWidth;
+    const maxPageScroll = section.clientHeight - window.innerHeight;
+    if (maxArticleScroll <= 0) return;
+    const progress = article.scrollLeft / maxArticleScroll;
+    window.scrollTo({ top: sectionTop + progress * maxPageScroll, behavior: 'instant' });
+});
 
 window.addEventListener('load', drawNodeLines);
 window.addEventListener('resize', drawNodeLines);
