@@ -78,6 +78,7 @@ li {
     padding: 1em;
     margin: 0.5em;
     font-size: 1.2em;
+    background-color: red;
 }
 
 .purchase-container {
@@ -150,7 +151,8 @@ label {
 
 .radio-card {
   position: relative;
-  border: 2px solid grey;
+  border: 2px solid white;
+  background-color: red;
   border-radius: 8px;
   padding: 1em;
 }
