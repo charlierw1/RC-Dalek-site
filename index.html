@@ -15,7 +15,8 @@
         <section class="purchase-container">
                 <model-viewer 
                     class="dalek-model"
-                    src="models/dalek-sec-compressed.glb" 
+                    src="models/dalek-sec-super-compressed.glb"
+                    loading="eager" 
                     alt="Dalek Sec" 
                     auto-rotate 
                     auto-rotate-delay="0" 
@@ -72,24 +73,25 @@
                 <svg id="node-lines" aria-hidden="true"></svg>
                 <fieldset class="sound-box">
                     <legend>Sound Effects</legend>
-                    <audio id="multiple" src="audio/multiple-spectrum.mp3"></audio>
+                    <audio id="multiple" preload="none" src="audio/multiple-spectrum.mp3"></audio>
                     <button onclick="multiple.play()">Multiple spectrum scanning now engaged!</button>
-                    <audio id="halt" src="audio/halt.mp3"></audio>
+                    <audio id="halt" preload="none" src="audio/halt.mp3"></audio>
                     <button onclick="halt.play()">Halt or you will be exterminated!</button>
-                    <audio id="supreme" src="audio/supreme-beings.mp3"></audio>
+                    <audio id="supreme" preload="none" src="audio/supreme-beings.mp3"></audio>
                     <button onclick="supreme.play()">We are the supreme beings!</button>
-                    <audio id="seek" src="audio/seek.mp3"></audio>
+                    <audio id="seek" preload="none" src="audio/seek.mp3"></audio>
                     <button onclick="seek.play()">Seek, locate, annihilate!</button>
-                    <audio id="obey" src="audio/obey.mp3"></audio>
+                    <audio id="obey" preload="none" src="audio/obey.mp3"></audio>
                     <button onclick="obey.play()">Obey the Daleks! No other warning will be given!</button>
-                    <audio id="enemy" src="audio/enemy.mp3"></audio>
+                    <audio id="enemy" preload="none" src="audio/enemy.mp3"></audio>
                     <button onclick="enemy.play()">You are an enemy of the Daleks.</button>
-                    <audio id="exterminate" src="audio/exterminate.mp3"></audio>
+                    <audio id="exterminate" preload="none" src="audio/exterminate.mp3"></audio>
                     <button onclick="exterminate.play()">Exterminate! (Gun SFX)</button>
                 </fieldset>
                 <model-viewer 
                     class="remote-control-model"
-                    src="models/remote-control-compressed.glb" 
+                    src="models/remote-control-super-compressed.glb" 
+                    loading="lazy"
                     alt="Dalek Sec" 
                     auto-rotate 
                     auto-rotate-delay="0" 
@@ -104,7 +106,7 @@
             <h2>About Dalek Sec!</h2>
             <article class="paragraph-box">
                 <div class="panel">
-                    <img loading="lazy" src="images/magella.png" alt="Dalek Sec" height="200" width="200">
+                    <img loading="lazy" src="images/magella.webp" alt="Dalek Sec" height="200" width="200">
                 </div>
                 <div class="panel">
                     <p>
@@ -115,7 +117,7 @@
                     </p>
                 </div>
                 <div class="panel">
-                    <img loading="lazy" src="images/battle.png" alt="Dalek Sec" height="200" width="200">
+                    <img loading="lazy" src="images/battle.webp" alt="Dalek Sec" height="200" width="200">
                 </div>
                 <div class="panel">
                     <p>
@@ -128,7 +130,7 @@
                     </p>
                 </div>
                 <div class="panel">
-                    <img loading="lazy" src="images/hybrid.png" alt="Dalek Sec" height="200" width="200">
+                    <img loading="lazy" src="images/hybrid.webp" alt="Dalek Sec" height="200" width="200">
                 </div>
                 <div class="panel">
                     <p>
