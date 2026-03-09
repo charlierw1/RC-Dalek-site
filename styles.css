@@ -39,7 +39,7 @@ article{
     width: 100%;
 }
 
-.dalek-model {
+#dalek-model {
     width: clamp(20em, 40%, 40em);
     height: clamp(20em, 50vw, 45em);
     animation: hover 3s ease-in-out infinite;
@@ -49,6 +49,23 @@ article{
     0%   { transform: translateY(1.5); }
     50%  { transform: translateY(-1.5em); }
     100% { transform: translateY(1.5); }
+}
+
+@keyframes morph {
+  0% {
+			border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+			background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
+	} 
+	
+	50% {
+			border-radius:  30% 60% 70% 40% / 50% 60% 30% 60%;
+			background: linear-gradient(45deg, var(--third) 0%, var(--secondary) 100%);
+	}
+  
+	100% {
+		border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+		background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
+	} 
 }
 
 @keyframes blink {
@@ -76,14 +93,10 @@ ul {
 }
 
 li {
-    list-style-type: none;
-    border: solid white 2px;
     border-radius: 0.5em;
     padding: 1em;
     margin: 0.5em;
     font-size: 1.2em;
-    background-color: gray;
-    color: black;
 }
 
 .purchase-container {
@@ -106,6 +119,12 @@ form {
     padding: 1em;
     border: solid white;
     background-color: black;
+}
+
+#price {
+    font-size: 4em;
+    transform: rotate(-3deg);
+    margin: auto;
 }
 
 input[type="submit"], button {
@@ -134,15 +153,18 @@ fieldset{
 }
 
 legend {
-    animation: blink 1.5s ease-in-out infinite;
+    animation: blink 3s ease-in-out infinite;
 }
 
 .radio-box:focus-within{
     border-color: blue;
 }
 
-
 label {
+    color: white;
+}
+
+div label {
     margin: auto;
     color: black;
 }
@@ -153,6 +175,17 @@ label {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+#address-box {
+    flex-direction: column;
+}
+
+input[type=text] {
+    padding: 0.75em;
+    border-radius: 1em;
+    border: solid gray 2px;
+    margin: 1em 0;
 }
 
 .radio-card {
@@ -202,6 +235,10 @@ label {
     flex-wrap: wrap-reverse;
     justify-content: space-evenly;
     width: 100%;
+}
+
+.controller-box fieldset {
+    border: none;
 }
 
 #node-lines {
@@ -260,14 +297,18 @@ label {
     height: 100%;
 }
 
-.panel > img{
+.panel img{
     width: clamp(10em, 30vw, 30em);
     height: auto;
     object-fit: contain;
     transform: rotate(1deg);
+    background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
+    animation: morph 5s ease-in-out infinite;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transition: all 1s ease-in-out;
 }
 
-.panel > p {
+.panel p {
     transform: rotate(-1deg);
     width: 60vw;
     font-size: clamp(0.5em, 3vw, 2.3em);
@@ -284,6 +325,6 @@ footer {
     text-align: center;
 }
 
-footer > a {
+footer a {
     color: lightgreen;
 }

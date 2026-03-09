@@ -7,16 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>12" Radio Controlled Dalek Sec</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
 <body>
     <main>
-        <h1>Dalek Sec, the leader of the Cult of Skaro</h1>
+        <h1>12" Radio Controlled Dalek Sec</h1>
         <section class="purchase-container">
                 <model-viewer 
-                    class="dalek-model"
+                    id="dalek-model"
                     src="models/dalek-sec-super-compressed.glb"
-                    loading="eager" 
                     alt="Dalek Sec" 
                     auto-rotate 
                     auto-rotate-delay="0" 
@@ -28,6 +28,7 @@
             <form>
                 <fieldset>
                     <legend>Buy it now!</legend>
+                    <p id="price"><span>£29.99</span></p>
                     <fieldset class="radio-box" id="quantity-box">
                         <legend>Quantity (Max 3 per customer)</legend>
                         <div class="radio-card" data-label="1">
@@ -53,8 +54,20 @@
                             <label for="collection">Collection</label>
                             <input type="radio" name="delivery" id="collection" value="collection">
                         </div>
-                        </div>
-                </fieldset>
+                    </fieldset>
+                    <fieldset class="radio-box" id="address-box">
+                        <legend>Address</legend>
+                        <label for="name">Name:</label>
+                        <input type="text" name="address" id="name" placeholder="name">
+                        <label for="surname">Surname:</label>
+                        <input type="text" name="address" id="surname" placeholder="surname">
+                        <label for="email">Email:</label>
+                        <input type="text" name="address" id="email" placeholder="example@example.com">
+                        <label for="email">Building Number:</label>
+                        <input type="text" name="address" id="number" placeholder="67">
+                        <label for="email">Post Code:</label>
+                        <input type="text" name="address" id="postcode" placeholder="PR9 7BU">
+                    </fieldset>
                     <input type="submit">
                 </fieldset>
                 </form>
@@ -152,6 +165,9 @@
     </footer>
 </body>
 <script>
+
+
+
    function drawNodeLines() {
   const svg = document.getElementById('node-lines');
   const box = document.querySelector('.controller-box');
