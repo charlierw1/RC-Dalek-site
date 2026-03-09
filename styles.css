@@ -334,7 +334,7 @@ input[type=text] {
 
 .side-scroll-wrap {
     height: 100vh;
-    width: max-content;   /* change this */
+    width: max-content;
     will-change: transform;
     animation: linear move forwards;
     animation-timeline: scroll(root);
@@ -355,6 +355,7 @@ input[type=text] {
     outline: solid gray;
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     transition: all 1s ease-in-out;
+    margin: 1em;
 }
 
 .side-scroll-wrap p {
