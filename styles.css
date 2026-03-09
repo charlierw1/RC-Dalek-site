@@ -10,11 +10,19 @@ body {
     background-color: black;
     color: white;
     margin: 0;
-    text-shadow: 0.1em 0.1em 0.05em gray;
+    text-shadow: 0.075em 0.075em 0.05em darkgrey;
 }
+
+
 
 h1 {
     font-size: clamp(1.2em, 4vw, 4em);
+    width: 100%;
+    order: 999;
+    background-color: black;
+    padding: 0.5em;
+    margin: 0;
+    text-align: center;
 }
 
 h2 {
@@ -40,38 +48,60 @@ article{
 }
 
 #dalek-model {
-    width: clamp(20em, 40%, 40em);
-    height: clamp(20em, 50vw, 45em);
+    width: clamp(20em, 60%, 50em);
+    height: clamp(20em, 70vw, 70em);
     animation: hover 3s ease-in-out infinite;
 }
 
 @keyframes hover {
-    0%   { transform: translateY(1.5); }
+    0%   { transform: translateY(1.5em); }
     50%  { transform: translateY(-1.5em); }
-    100% { transform: translateY(1.5); }
+    100% { transform: translateY(1.5em); }
 }
 
 @keyframes morph {
   0% {
 			border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
-			background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
 	} 
 	
 	50% {
 			border-radius:  30% 60% 70% 40% / 50% 60% 30% 60%;
-			background: linear-gradient(45deg, var(--third) 0%, var(--secondary) 100%);
 	}
   
 	100% {
 		border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
-		background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
 	} 
+}
+
+@supports (border-radius: random(30%, 70%)) {
+  @keyframes morph {
+    0% {
+      border-radius: random(30%, 70%) random(30%, 70%) random(30%, 70%) random(30%, 70%) / random(30%, 70%) random(30%, 70%) random(30%, 70%) random(30%, 70%);
+    } 
+    50% {
+      border-radius: random(30%, 70%) random(30%, 70%) random(30%, 70%) random(30%, 70%) / random(30%, 70%) random(30%, 70%) random(30%, 70%) random(30%, 70%);
+    }
+    100% {
+      border-radius: random(30%, 70%) random(30%, 70%) random(30%, 70%) random(30%, 70%) / random(30%, 70%) random(30%, 70%) random(30%, 70%) random(30%, 70%);
+    } 
+  }
 }
 
 @keyframes blink {
     0%   { transform: scale(0.95); }
     50%  { transform: scale(1.05); }
     100% { transform: scale(0.95); }
+}
+
+@keyframes pop {
+    50% {
+        transform: scale(1.5);
+        color: red;
+    }
+    100% {
+        transform: scale(1);
+        color: white;
+    }
 }
 
 .remote-control-model {
@@ -97,11 +127,22 @@ li {
     padding: 1em;
     margin: 0.5em;
     font-size: 1.2em;
+    animation-name: pop;
+    animation-timeline: view(40% 0%);
+    animation-duration: 1s;
 }
+
+li:nth-child(1) { animation-delay: .5s;}
+li:nth-child(2) { animation-delay: 1s; }
+li:nth-child(3) { animation-delay: 1.5s; }
+li:nth-child(4) { animation-delay: 2s; }
+li:nth-child(5) { animation-delay: 2.5s; }
+li:nth-child(6) { animation-delay: 3s; }
+li:nth-child(7) { animation-delay: 3.5s; }
 
 .purchase-container {
     margin: 0;
-    padding: 2em 0;
+    padding: 0;
     display: flex;
     flex-wrap: wrap-reverse;
     justify-content: center;
@@ -136,6 +177,10 @@ input[type="submit"], button {
     border: white solid 2px;
     border-radius: 0.5em;
     font-size: 1em;
+    font-family: sans-serif;
+}
+button {
+    animation: fadeRight;
 }
 
 input[type="submit"]:hover, button:hover {
@@ -154,6 +199,7 @@ fieldset{
 
 legend {
     animation: blink 3s ease-in-out infinite;
+    font-family: sans-serif;
 }
 
 .radio-box:focus-within{
@@ -162,6 +208,7 @@ legend {
 
 label {
     color: white;
+    font-family: sans-serif;
 }
 
 div label {
@@ -219,7 +266,7 @@ input[type=text] {
 
 .radio-card input[type="radio"] {
   position: absolute;
-  clip-path: polygon(0,0);
+  clip-path: polygon(0 0);
   width: 0;
   height: 0;
 }
@@ -262,61 +309,81 @@ input[type=text] {
   filter: drop-shadow(0 0 4px white);
 }
 
-::-webkit-scrollbar {
 
-  display: none;
-
+@keyframes move {
+    from {
+        transform: translateX(150%);
+    }
+    to {
+        transform: translateX(calc(-100% + 100vw));
+    }
 }
 
-.scroll-section {
-    width: 100%;
+#side-scroll {
     height: 300vh;
+    overflow-x: clip;
 }
 
-.paragraph-box {
+.side-scroll-sticky {
+    height: 100vh;
+    width: 100vw;
     position: sticky;
     top: 0;
+    overflow: hidden;
+}
+
+.side-scroll-wrap {
+    height: 100vh;
+    width: max-content;   /* change this */
+    will-change: transform;
+    animation: linear move forwards;
+    animation-timeline: scroll(root);
+    animation-range: 0% 100%;
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    width: 100%;
-    height: 80vh;
     gap: 2em;
     padding: 5em;
     box-sizing: border-box;
     align-items: center;
 }
 
-.panel {
-    flex-shrink: 0;
-    scroll-snap-align: start;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
-.panel img{
+.side-scroll-wrap img {
     width: clamp(10em, 30vw, 30em);
     height: auto;
     object-fit: contain;
     transform: rotate(1deg);
-    background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
     animation: morph 5s ease-in-out infinite;
+    outline: solid gray;
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     transition: all 1s ease-in-out;
 }
 
-.panel p {
+.side-scroll-wrap p {
     transform: rotate(-1deg);
     width: 60vw;
-    font-size: clamp(0.5em, 3vw, 2.3em);
+    font-size: clamp(0.75em, 1.5vw, 2.3em);
     white-space: normal;
+}
+
+figure {
+    justify-items: center;
+}
+
+figcaption {
+    font-family: sans-serif;
 }
 
 span {
     color: red;
+}
+
+footer {
+    width: 100%;
+    margin: 2em 0;
+    text-align: center;
+}
+
+footer a {
+    color: lightgreen;
 }
 
 footer {

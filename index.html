@@ -12,11 +12,12 @@
 </head>
 <body>
     <main>
-        <h1>12" Radio Controlled Dalek Sec</h1>
-        <section class="purchase-container">
+        <section class="purchase-container">   
+            <h1>12" Radio Controlled Dalek Sec</h1>
                 <model-viewer 
                     id="dalek-model"
                     src="models/dalek-sec-super-compressed.glb"
+                    poster="images/dalek-placeholder.webp"
                     alt="Dalek Sec" 
                     auto-rotate 
                     auto-rotate-delay="0" 
@@ -58,15 +59,15 @@
                     <fieldset class="radio-box" id="address-box">
                         <legend>Address</legend>
                         <label for="name">Name:</label>
-                        <input type="text" name="address" id="name" placeholder="name">
+                        <input type="text" name="address" id="name" placeholder="name" autocomplete="given-name">
                         <label for="surname">Surname:</label>
-                        <input type="text" name="address" id="surname" placeholder="surname">
+                        <input type="text" name="address" id="surname" placeholder="surname" autocomplete="family-name">
                         <label for="email">Email:</label>
-                        <input type="text" name="address" id="email" placeholder="example@example.com">
-                        <label for="email">Building Number:</label>
-                        <input type="text" name="address" id="number" placeholder="67">
+                        <input type="text" name="address" id="email" placeholder="example@example.com" autocomplete="email">
+                        <label for="email">Address:</label>
+                        <input type="text" name="address" id="address" placeholder="67 aura street" autocomplete="address-line1">
                         <label for="email">Post Code:</label>
-                        <input type="text" name="address" id="postcode" placeholder="PR9 7BU">
+                        <input type="text" name="address" id="postcode" placeholder="PR9 7BU" autocomplete="postal-code">
                     </fieldset>
                     <input type="submit">
                 </fieldset>
@@ -103,7 +104,8 @@
                 </fieldset>
                 <model-viewer 
                     class="remote-control-model"
-                    src="models/remote-control-super-compressed.glb" 
+                    src="models/remote-control-super-compressed.glb"
+                    poster="images/remote-placeholder.webp" 
                     loading="lazy"
                     alt="Dalek Sec" 
                     auto-rotate 
@@ -115,37 +117,36 @@
                 ></model-viewer>
             </div>
         </section>
-        <section class="scroll-section">
+        <article id="side-scroll">
             <h2>About Dalek Sec!</h2>
-            <article class="paragraph-box">
-                <div class="panel">
-                    <img loading="lazy" src="images/magella.webp" alt="Dalek Sec" height="200" width="200">
-                </div>
-                <div class="panel">
+            <div class="side-scroll-sticky">
+                <div class="side-scroll-wrap">
+                    <figure>
+                        <img loading="lazy" src="images/magella.webp" alt="Dalek Sec exterminating a Mechanoid" height="200" width="200">
+                        <figcaption>Dalek Sec on Magella during the war with the Mechanoids</figcaption>
+                    </figure>
                     <p>
                         <span>Dalek Sec</span> is an extremely high ranking dalek said to be above the <span>Dalek Emperor</span> himself! Sec began
                         as a regular bronze Dalek. After proving himself by <span>exterminating</span> the <span>Mechanoids</span> during their 
                         war on Magella, Sec was appointed as the leader of the <span>Cult of Skaro</span>. He was then upgraded to so 
                         that his casing was made of <span>Metalert</span>, an extremely strong alloy of <span>Dalekanium</span>.
                     </p>
-                </div>
-                <div class="panel">
-                    <img loading="lazy" src="images/battle.webp" alt="Dalek Sec" height="200" width="200">
-                </div>
-                <div class="panel">
+                    <figure>
+                        <img loading="lazy" src="images/battle.webp" alt="Daleks exterminating Cybermen" height="200" width="200">
+                        <figcaption>Daleks from the Genesis Ark attacking the Cybermen</figcaption>
+                    </figure>
                     <p>
-                        During the later stages last great <span>Time War</span>, both sides could see the havoc the destruction
-                        the the war was bringing to the universe. The <span>Cult of Skaro</span> stole the <span>Genesis Ark</span> and escaped
+                        During the later stages last great <span>Time War</span>, both sides could see the destruction
+                        the war was bringing to the universe. The <span>Cult of Skaro</span> stole the <span>Genesis Ark</span> and escaped
                         the universe in a <span>Void Ship</span> to ensure the survival of the daleks. After the war, they were
                         returned to the universe to find that the <span>Cybermen</span> had used the crack between worlds to
                         <span>invade</span> london in our universe. They then used the <span>Genesis Ark</span> to unleash millions
                         of Daleks to destroy the <span>Cybermen</span>
                     </p>
-                </div>
-                <div class="panel">
-                    <img loading="lazy" src="images/hybrid.webp" alt="Dalek Sec" height="200" width="200">
-                </div>
-                <div class="panel">
+                    <figure>
+                        <img loading="lazy" src="images/hybrid.webp" alt="Daleks under attack from Human Daleks" height="200" width="200">
+                        <figcaption>Dalek Thay and Dalek Jast as they are turned on by the Dalek Humans</figcaption>
+                    </figure>
                     <p>
                         After the Battle of Canary Wharf, the <span>Cult of Skaro</span> escaped to New York City in 1930. Because they head
                         used their ability to <span>Emergency Temporal Shift</span>, their power cells had become damaged and were limited on options.
@@ -157,93 +158,58 @@
                         alive, who then emergency temporal shifts into the <span>Time War</span> to escape.
                     </p>
                 </div>
-            </article>
-        </section>
+            </div>
+        </article>
     </main>
     <footer>
         <a href="https://github.com/charlierw1" target="_blank">Charlie Wightman</a>
     </footer>
-</body>
-<script>
+    <script>
+    function drawNodeLines() {
+        const box = document.querySelector('.controller-box'); // Define container
+        const svg = document.getElementById('node-lines'); // Define SVG object
+        const modelViewer = document.querySelector('.remote-control-model'); // Define controller model
+        const buttons = document.querySelectorAll('.sound-box button'); // Define sound buttons
 
+        svg.innerHTML = ''; // Clear SVG
 
+        const boxRect = box.getBoundingClientRect(); // Define container area
+        const mvRect  = modelViewer.getBoundingClientRect(); // Define model area
+        const soundBoxRect = document.querySelector('.sound-box').getBoundingClientRect(); // Define button fieldset area
 
-   function drawNodeLines() {
-  const svg = document.getElementById('node-lines');
-  const box = document.querySelector('.controller-box');
-  const modelViewer = document.querySelector('.remote-control-model');
-  const buttons = document.querySelectorAll('.sound-box button');
+        const targetX = (mvRect.left - boxRect.left) + mvRect.width  / 2; // Set model central x value
+        const targetY = (mvRect.top  - boxRect.top)  + mvRect.height / 2; // Set model central y value
+        const soundCentreX = (soundBoxRect.left - boxRect.left) + soundBoxRect.width / 2; // Set button fieldset x centre
 
-  svg.innerHTML = '';
+        const isWrapped = Math.abs(targetX - soundCentreX) < 10; // Define the range of x values that determines when the flex box has wrapped
 
-  const boxRect = box.getBoundingClientRect();
-  const mvRect  = modelViewer.getBoundingClientRect();
+        buttons.forEach(button => {
+            const btnRect = button.getBoundingClientRect(); // Get buttons area
+            const btnX = isWrapped // Determine whether the lines should be drawn from the centre of the button or from the right based on whether the flex box has wrapped
+                ? (btnRect.left - boxRect.left) + btnRect.width  / 2
+                : (btnRect.right - boxRect.left);
+            const btnY = (btnRect.top - boxRect.top) + btnRect.height / 2; // Get the vertical centre of the buttons
 
-  const targetX = (mvRect.left - boxRect.left) + mvRect.width  / 2;
-  const targetY = (mvRect.top  - boxRect.top)  + mvRect.height / 2;
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line'); // Define SVG line shape
+            line.setAttribute('x1', btnX);
+            line.setAttribute('y1', btnY);
+            line.setAttribute('x2', targetX);
+            line.setAttribute('y2', targetY);
+            // Define the line start and end points
+            svg.appendChild(line); // Append the line to the SVG
 
-  const isMobile = window.innerWidth <= 606;
+            const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle'); // Define SVG circle shape
+            dot.setAttribute('cx', btnX);
+            dot.setAttribute('cy', btnY);
+            // Set the circles position
+            dot.setAttribute('r', 4); // Set circle radius
+            svg.appendChild(dot); // Append the circle to the SVG
+        });
+    }
 
-  const centralDot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-  centralDot.setAttribute('cx', targetX);
-  centralDot.setAttribute('cy', targetY);
-  centralDot.setAttribute('r', 6);
-  svg.appendChild(centralDot);
-
-  buttons.forEach(button => {
-    const btnRect = button.getBoundingClientRect();
-    const btnX = isMobile
-      ? (btnRect.left - boxRect.left) + btnRect.width  / 2
-      : (btnRect.right - boxRect.left);
-    const btnY = (btnRect.top - boxRect.top) + btnRect.height / 2;
-
-    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-    line.setAttribute('x1', btnX);
-    line.setAttribute('y1', btnY);
-    line.setAttribute('x2', targetX);
-    line.setAttribute('y2', targetY);
-    svg.appendChild(line);
-
-    const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    dot.setAttribute('cx', btnX);
-    dot.setAttribute('cy', btnY);
-    dot.setAttribute('r', 4);
-    svg.appendChild(dot);
-  });
-}
-
-const article = document.querySelector('.paragraph-box');
-const section = document.querySelector('.scroll-section');
-
-// Scroll wheel / trackpad
-window.addEventListener('wheel', (e) => {
-    const sectionRect = section.getBoundingClientRect();
-    const inView = sectionRect.top <= 0 && sectionRect.bottom > window.innerHeight;
-
-    if (!inView) return;
-
-    const atStart = article.scrollLeft <= 0;
-    const atEnd = article.scrollLeft + article.clientWidth >= article.scrollWidth - 1;
-
-    if (e.deltaY < 0 && atStart) return;
-    if (e.deltaY > 0 && atEnd) return;
-
-    e.preventDefault();
-    article.scrollLeft += e.deltaY;
-}, { passive: false });
-
-// Scrollbar drag sync
-article.addEventListener('scroll', () => {
-    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-    const maxArticleScroll = article.scrollWidth - article.clientWidth;
-    const maxPageScroll = section.clientHeight - window.innerHeight;
-    if (maxArticleScroll <= 0) return;
-    const progress = article.scrollLeft / maxArticleScroll;
-    window.scrollTo({ top: sectionTop + progress * maxPageScroll, behavior: 'instant' });
-});
-
-window.addEventListener('load', drawNodeLines);
-window.addEventListener('resize', drawNodeLines);
-setTimeout(drawNodeLines, 1000);
+    window.addEventListener('load', drawNodeLines);
+    window.addEventListener('resize', drawNodeLines);
+    // Set the draw function to run when the page loads or resizes
 </script>
+</body>
 </html>
