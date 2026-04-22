@@ -48,8 +48,8 @@ article{
 }
 
 #dalek-model {
-    width: clamp(20em, 60%, 50em);
-    height: clamp(20em, 70vw, 70em);
+    width: clamp(20em, 60vw, 110em);
+    height: clamp(20em, 70vw, 80em);
     animation: hover 3s ease-in-out infinite;
 }
 
@@ -156,7 +156,7 @@ li:nth-child(7) { animation-delay: 3.5s; }
 
 form {
     min-width: 20em;
-    width: 40%;
+    width: 30%;
     margin: auto 2em;
     padding: 1em;
     border: solid white;
