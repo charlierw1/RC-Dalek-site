@@ -18,8 +18,8 @@ function drawNodeLines() {
 
     buttons.forEach(button => {
         const btnRect = button.getBoundingClientRect(); // Get buttons area
-        const btnX = isWrapped // Determine whether the lines should be drawn from the centre of the button or from the right based on whether the flex box has wrapped
-            ? (btnRect.left - boxRect.left) + btnRect.width / 2
+        const btnX = isWrapped // Determine whether the lines should be drawn from the centre of the screen or from the right based on whether the flex box has wrapped
+            ? window.innerWidth / 2 - boxRect.left
             : (btnRect.right - boxRect.left);
         const btnY = (btnRect.top - boxRect.top) + btnRect.height / 2; // Get the vertical centre of the buttons
 

@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: "Dalek", sans-serif;
+    font-family: "Dalek", 'Courier New', Courier, monospace;
     background-color: black;
     color: white;
     margin: 0;
@@ -18,7 +18,6 @@ body {
 h1 {
     font-size: clamp(1.2em, 4vw, 4em);
     width: 100%;
-    order: 999;
     background-color: black;
     padding: 0.5em;
     margin: 0;
@@ -48,8 +47,8 @@ article{
 }
 
 #dalek-model {
-    width: clamp(20em, 60vw, 110em);
-    height: clamp(20em, 70vw, 80em);
+    width: clamp(20em, 50vw, 110em);
+    height: clamp(20em, 60vw, 80em);
     animation: hover 3s ease-in-out infinite;
 }
 
@@ -157,7 +156,7 @@ li:nth-child(7) { animation-delay: 3.5s; }
 form {
     min-width: 20em;
     width: 30%;
-    margin: auto 2em;
+    margin: 5em;
     padding: 1em;
     border: solid white;
     background-color: black;
@@ -177,8 +176,8 @@ input[type="submit"], button {
     color: white;
     border: white solid 2px;
     border-radius: 0.5em;
-    font-size: clamp(1em, 2vw, 2em);
-    font-family: sans-serif;
+    font-size: clamp(1em, 1vw, 2em);
+    font-family: 'Courier New', Courier, monospace;
 }
 button {
     animation: fadeRight;
@@ -206,7 +205,7 @@ fieldset{
 
 legend {
     transform: rotate(-1deg);
-    font-family: sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     font-size: clamp(1em, 2vw, 3em);
 }
 
@@ -216,7 +215,7 @@ legend {
 
 label {
     color: white;
-    font-family: sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     font-size: clamp(1em, 1vw, 1.5em);
 }
 
@@ -251,6 +250,10 @@ input[type=text] {
   background-color: gray;
   border-radius: 8px;
   padding: 1.5em;
+}
+
+.radio-card:hover {
+    background-color: rgb(82, 82, 82);
 }
 
 .radio-card:hover {
@@ -369,9 +372,10 @@ input[type=text] {
 }
 
 .side-scroll-wrap p {
+    font-family: 'Courier New', Courier, monospace;
     transform: rotate(-1deg);
     width: 60vw;
-    font-size: clamp(0.75em, 1.5vw, 2.3em);
+    font-size: clamp(0.9em, 1.5vw, 2.3em);
     white-space: normal;
 }
 
@@ -380,11 +384,18 @@ figure {
 }
 
 figcaption {
-    font-family: sans-serif;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 span {
     color: red;
+    font-family: Dalek;
+}
+
+@media (max-width: 768px) {
+    span {
+        text-shadow: none;
+    }
 }
 
 footer {
